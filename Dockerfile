@@ -38,7 +38,6 @@ RUN curl -L https://github.com/docker/compose/releases/download/${COMPOSE_VERSIO
     chmod +x /usr/local/bin/docker-compose
 
 # cleanup
-RUN apt-get -y -qq purge unzip curl wget ca-certificates && rm -rf /var/lib/apt/lists/* && apt-get clean
-RUN rm -rf /tmp/* /var/tmp/* ${JAVA_HOME}/*src.zip
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ${JAVA_HOME}/*src.zip && apt-get clean
 
 CMD []
