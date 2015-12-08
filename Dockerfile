@@ -1,7 +1,6 @@
-FROM debian:8
+FROM ubuntu:14.04
 
-ENV DEBIAN_FRONTEND=noninteractive \
-    JAVA_VERSION_MAJOR=8 \
+ENV JAVA_VERSION_MAJOR=8 \
     JAVA_VERSION_MINOR=45 \
     JAVA_VERSION_BUILD=14 \
     JAVA_PACKAGE=jdk \
@@ -12,7 +11,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
     PATH=$PATH:${JAVA_HOME}/bin:${GRADLE_HOME}:${GRADLE_HOME}/bin
 
 # install required packages
-RUN apt-get update -qq && apt-get -y -qq --no-install-recommends install locales git unzip bash curl wget ca-certificates
+RUN apt-get update -qq && apt-get -y -qq --no-install-recommends install locales git unzip bash curl wget ca-certificates libapparmor1
 
 # set locales
 RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
