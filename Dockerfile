@@ -7,7 +7,7 @@ ENV JAVA_VERSION_MAJOR=8 \
     JAVA_HOME=/opt/jdk \
     GRADLE_VERSION=2.8 \
     GRADLE_HOME=/opt/gradle \
-    COMPOSE_VERSION=1.5.1 \
+    COMPOSE_VERSION=1.6.0 \
     PATH=$PATH:${JAVA_HOME}/bin:${GRADLE_HOME}:${GRADLE_HOME}/bin
 
 # install required packages
